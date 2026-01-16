@@ -1,4 +1,4 @@
-package com.example.gpsgeofenceapp
+package com.example.gpsgeofenceapp.ui.navigation
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -10,11 +10,18 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.gpsgeofenceapp.data.repository.GeofenceRepository
 import com.example.gpsgeofenceapp.service.GeofenceService
-import com.example.gpsgeofenceapp.ui.navigation.BottomBar
 import com.example.gpsgeofenceapp.ui.screens.AddGeofenceScreen
 import com.example.gpsgeofenceapp.ui.screens.DashboardScreen
+import com.example.gpsgeofenceapp.ui.screens.HistoryScreen // <-- Upewnij się, że masz ten import
 import com.example.gpsgeofenceapp.ui.viewmodel.AddGeofenceViewModel
 import com.example.gpsgeofenceapp.ui.viewmodel.DashboardViewModel
+import com.example.gpsgeofenceapp.ui.viewmodel.HistoryViewModel // <-- I ten import
+
+/**
+ * Główny graf nawigacji aplikacji (Navigation Graph).
+ * Definiuje dostępne ścieżki (Routes) i mapuje je na konkretne ekrany (Composables).
+ * Zarządza tworzeniem i cyklem życia obiektów ViewModel dla każdego ekranu.
+ */
 
 class Navigation {
 }
@@ -31,6 +38,10 @@ fun AppNav(
     geofenceService: GeofenceService
 ) {
     val navController = rememberNavController()
+
+    val addVm = remember {
+        AddGeofenceViewModel(repository, geofenceService)
+    }
 
     Scaffold(
         bottomBar = {
@@ -52,25 +63,32 @@ fun AppNav(
                 DashboardScreen(
                     viewModel = vm,
                     onAddClick = {
+                        addVm.clearForm()
                         navController.navigate(Screen.AddGeofence.route)
                     },
-                    onItemClick = {}
+                    onItemClick = { id ->
+                        addVm.loadGeofence(id)
+                        navController.navigate(Screen.AddGeofence.route)
+                    }
                 )
             }
 
             composable(Screen.AddGeofence.route) {
-                val vm = remember {
-                    AddGeofenceViewModel(repository, geofenceService)
-                }
-
                 AddGeofenceScreen(
-                    viewModel = vm,
+                    viewModel = addVm,
                     onSaved = {
                         navController.navigate(Screen.Dashboard.route)
                     }
                 )
             }
+
+            composable(BottomNavItem.History.route) {
+                val historyVm = remember {
+                    HistoryViewModel(repository)
+                }
+
+                HistoryScreen(viewModel = historyVm)
+            }
         }
     }
 }
-

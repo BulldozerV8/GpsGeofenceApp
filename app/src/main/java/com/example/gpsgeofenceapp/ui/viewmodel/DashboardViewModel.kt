@@ -14,10 +14,10 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 /**
- * ViewModel ekranu głównego.
- * - udostępnienie listy geofence z bazy danych
- * - usuwanie geofence (system + baza)
- * - ręczne testowanie pozycji użytkownika
+ * ViewModel dla ekranu głównego (Dashboard).
+ * Udostępnia strumień danych (Flow) z listą aktywnych obszarów.
+ * Obsługuje logikę usuwania geofence, zapewniając spójność
+ * między bazą danych a usługami lokalizacyjnymi Google.
  */
 
 class DashboardViewModel(
@@ -37,6 +37,11 @@ class DashboardViewModel(
         }
     }
 
+/**
+ * FUNKCJA DEBUGUJĄCA (Wspomniana w raporcie - Sekcja 6)
+ * Używana do diagnozy problemów z GPS na emulatorze.
+ * Sprawdza, czy FusedLocationProvider w ogóle zwraca jakąkolwiek pozycję.
+ */
     @SuppressLint("MissingPermission")
     fun testLocation(context: Context) {
         val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)

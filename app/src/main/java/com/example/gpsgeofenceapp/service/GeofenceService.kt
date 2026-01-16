@@ -14,10 +14,10 @@ import com.google.android.gms.location.GeofencingRequest
 import com.google.android.gms.location.LocationServices
 
 /**
- * Warstwa integracji z Google Play Services (Geofencing API).
- * - rejestracja geofence w systemie Android
- * - usuwanie geofence z systemu
- * - przekazanie PendingIntent do BroadcastReceiver
+ * Klasa pomocnicza (Wrapper) dla Google Geofencing API.
+ * Ukrywa skomplikowany proces budowania żądania (GeofencingRequest)
+ * oraz rejestracji intencji (PendingIntent).
+ * Sprawdza uprawnienia lokalizacyjne przed wysłaniem żądania do systemu.
  */
 
 class GeofenceService(private val context: Context) {
