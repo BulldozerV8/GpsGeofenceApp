@@ -1,4 +1,4 @@
-# Geofence Automator
+# Gps Geofence App
 
 Aplikacja mobilna dla systemu Android do automatyzacji powiadomień i zachowania telefonu (np. wyciszania) na podstawie wirtualnych stref na mapie (Geofencing) oraz harmonogramu czasowego.
 
