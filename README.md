@@ -29,14 +29,14 @@ Projekt został zrealizowany w oparciu o wzorzec **MVVM** oraz zasady **Clean Ar
    git clone <adres_repozytorium>
 2. **Konfiguracja klucza API Map Google:**
    Ze względów bezpieczeństwa klucz API nie jest dołączony do repozytorium.
-   - **Wygeneruj własny klucz API dla Maps SDK for Android w konsoli Google Cloud.
-   - **W głównym katalogu projektu utwórz lub wyedytuj plik local.properties i dodaj linię:
+   - Wygeneruj własny klucz API dla Maps SDK for Android w konsoli Google Cloud.
+   - W głównym katalogu projektu utwórz lub wyedytuj plik local.properties i dodaj linię:
    ```bash
    MAPS_API_KEY=twoj_wygenerowany_klucz_api
 3. **Uruchomienie:**
-   - **Otwórz pobrany folder w Android Studio.
-   - **Poczekaj na zakończenie synchronizacji Gradle.
-   - **Uruchom aplikację na fizycznym urządzeniu (zalecane) lub na emulatorze.
+   - Otwórz pobrany folder w Android Studio.
+   - Poczekaj na zakończenie synchronizacji Gradle.
+   - Uruchom aplikację na fizycznym urządzeniu (zalecane) lub na emulatorze.
 
 **Uwaga (Testowanie na emulatorze):**
    Jeśli zdarzenia wejścia w strefę nie są wykrywane, otwórz najpierw systemową aplikację Google Maps na emulatorze, aby "wybudzić" usługi lokalizacyjne urządzenia.
