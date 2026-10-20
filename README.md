@@ -4,10 +4,10 @@ Aplikacja mobilna dla systemu Android do automatyzacji powiadomień i zachowania
 
 ## 🚀 Funkcjonalności
 
-* **Zarządzanie strefami:** Rysowanie, edycja i usuwanie obszarów na interaktywnej mapie Google.
+* **Zarządzanie strefami:** Dodawanie, edycja i usuwanie kołowych stref na interaktywnej mapie Google.
 * **Logika czasoprzestrzenna:** Reagowanie na strefy tylko w zdefiniowanych godzinach i dniach tygodnia.
 * **Automatyzacja profilu:** Samoczynne wyciszanie dzwonka telefonu po wejściu w strefę (np. do pracy lub szkoły).
-* **Działanie w tle:** Zoptymalizowane wykrywanie lokalizacji z użyciem *Adaptive Polling* (oszczędzanie baterii).
+* **Działanie w tle:** Optymalizacja zużycia baterii dzięki mechanizmom Google Geofencing API.
 * **Historia i logi:** Zapis logów wejść i wyjść ze stref do lokalnej bazy danych z możliwością przeglądania.
 * **Powiadomienia:** Natywne alerty systemowe informujące o zmianie strefy i statusu telefonu.
 
@@ -19,7 +19,7 @@ Projekt został zrealizowany w oparciu o wzorzec **MVVM** oraz zasady **Clean Ar
 * **Interfejs (UI):** Jetpack Compose (deklaratywne UI)
 * **Baza Danych:** Room Database (lokalna baza SQLite)
 * **Usługi Lokalizacyjne:** Google Play Services (Geofencing API, Maps SDK)
-* **Logika systemowa:** BroadcastReceiver, Background Services, Notification API
+* **Logika systemowa:** GeofenceReceiver, GeofenceService, NotificationService
 
 ## ⚙️ Instrukcja Instalacji (Środowisko Deweloperskie)
 
@@ -27,6 +27,7 @@ Projekt został zrealizowany w oparciu o wzorzec **MVVM** oraz zasady **Clean Ar
    Sklonuj repozytorium na swój dysk lokalny:
    ```bash
    git clone <adres_repozytorium>
+   ```
 2. **Konfiguracja klucza API Map Google:**
    Ze względów bezpieczeństwa klucz API nie jest dołączony do repozytorium.
    - Wygeneruj własny klucz API dla Maps SDK for Android w konsoli Google Cloud.
