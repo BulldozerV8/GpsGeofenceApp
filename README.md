@@ -2,8 +2,6 @@
 
 Aplikacja mobilna dla systemu Android do automatyzacji powiadomień i zachowania telefonu (np. wyciszania) na podstawie wirtualnych stref na mapie (Geofencing) oraz harmonogramu czasowego.
 
-**Autor:** Piotr Walerianowicz
-
 ## 🚀 Funkcjonalności
 
 * **Zarządzanie strefami:** Rysowanie, edycja i usuwanie obszarów na interaktywnej mapie Google.
@@ -39,4 +37,6 @@ Projekt został zrealizowany w oparciu o wzorzec **MVVM** oraz zasady **Clean Ar
    - **Otwórz pobrany folder w Android Studio.
    - **Poczekaj na zakończenie synchronizacji Gradle.
    - **Uruchom aplikację na fizycznym urządzeniu (zalecane) lub na emulatorze.
-**Uwaga (Testowanie na emulatorze): Jeśli zdarzenia wejścia w strefę nie są wykrywane, otwórz najpierw systemową aplikację Google Maps na emulatorze, aby "wybudzić" usługi lokalizacyjne urządzenia.
+
+**Uwaga (Testowanie na emulatorze):**
+   Jeśli zdarzenia wejścia w strefę nie są wykrywane, otwórz najpierw systemową aplikację Google Maps na emulatorze, aby "wybudzić" usługi lokalizacyjne urządzenia.
