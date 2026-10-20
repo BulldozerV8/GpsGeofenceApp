@@ -31,7 +31,7 @@ Projekt został zrealizowany w oparciu o wzorzec **MVVM** oraz zasady **Clean Ar
 2. **Konfiguracja klucza API Map Google:**
    Ze względów bezpieczeństwa klucz API nie jest dołączony do repozytorium.
    - Wygeneruj własny klucz API dla Maps SDK for Android w konsoli Google Cloud.
-   - W głównym katalogu projektu edytuj plik google_maps_api.xml i wygenerowany klucz API: `MAPS_API_KEY=twoj_wygenerowany_klucz_api`
+   - Otwórz plik `app/src/main/res/values/google_maps_api.xml` i wstaw wygenerowany klucz API do zasobu `google_maps_key`.
 3. **Uruchomienie:**
    - Otwórz pobrany folder w Android Studio.
    - Poczekaj na zakończenie synchronizacji Gradle.
